@@ -1,0 +1,67 @@
+---
+import ContentSection from "../ContentSection.astro";
+---
+
+<ContentSection orderId="01" title="Learning Reflections">
+    <div class="container container--col-2">
+        <div class="container__col">
+            <div class="container__block">
+                <h4>What is my biggest strenght?</h4>
+                <p>My biggest strength is that i’m quick to adapt and learn new things. The web development sector is evolving faster than ever so it’s something you have to learn to work with.</p>
+            </div>
+            <div class="container__block">
+                <h4>What do i need to become better at?</h4>
+                <p>When starting a project I try to plan out the whole thing and know exactly how everything will work. This leads to me not actually starting anything and overengineering a lot of straightforward projects. So I need to become better at starting something without being 100% prepared.</p>
+            </div>
+            <div class="container__block">
+                <h4>What is my biggest weakness?</h4>
+                <p>I have a hard time trusting other people with work. This is because I think my way of doing things is the better approach. I’ve tried to be more aware of this and it has made me realise that more opinions is a good thing and it tends to deliver projects with less errors or design flaws.</p>
+            </div>
+        </div>
+        <div class="container__col">
+            <div class="container__block">
+                <h4>What specific skills are needed to do that?</h4>
+                <p>I think patience is something really valuable needed to fix this problem. Also just being confident when doing things will help to eliminate any doubt.</p>
+            </div>
+            <div class="container__block">
+                <h4>In this week, what skills would I like to have achieved?</h4>
+                <p>By the end of the week I want to learn a clean and efficient way to implement advanced animations to modern websites. The tools I’d use to achieve this are The greensock animation platform (GSAP) and maybe Spline a 3d modeling tool for the web.</p>
+                <p>I’m hoping to find a universal implementation which i can use with most (hopefully all) modern web dev tools.</p>
+            </div>
+        </div>
+    </div>
+</ContentSection>
+
+
+<style lang="scss">
+    .container {
+        display: grid;
+        
+        &--col-2 {
+            gap: var(--space-lg);
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        &__block {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+
+            h4 {
+                font-weight: var(--fw-bold);
+                line-height: var(--line-height-xs);
+            }
+
+            p {
+                line-height: var(--line-height-lg);
+                color: var(--gray-600);
+            }
+        }
+    }
+</style>

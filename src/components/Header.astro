@@ -1,0 +1,76 @@
+---
+---
+
+<header class="header">
+    <section class="header__logo">
+        <img src="/icons/logo.svg" alt="logo">
+    </section>
+    <nav class="header__nav">
+        <ul class="header__nav-links">
+            <li class="header__nav-link">
+                <a href="#">
+                    <p>Source code</p>
+                    <img src="/icons/terminal.svg" alt="terminal icon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    import gsap from "gsap";
+    import { Power2 } from "gsap";
+
+    const headerTl = gsap.timeline();
+
+    headerTl.from(".header__logo", {
+        delay: 3.5,
+        y: -200,
+        opacity: 0,
+        duration: 1,
+        ease: Power2.easeOut,
+    })
+    .from(".header__nav-link", {
+        y: -200,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.25,
+    }, "-=1")
+
+    headerTl.play();
+</script>
+
+<style lang="scss">
+    .header {
+        display: flex;
+        height: 6rem;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: var(--space-xl);
+        background-color: var(--red-500);
+        
+        &__logo img {
+            height: 1.5rem;
+        }
+
+        &__nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        &__nav-link a {
+            color: var(--white);
+            font-weight: var(--fw-medium);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2xs);
+
+            img {
+                height: 1.5rem;
+                width: fit-content;
+            }
+        }
+    }
+</style>
+

@@ -1,0 +1,115 @@
+---
+import Card from "../Card.astro";
+import ContentSection from "../ContentSection.astro";
+---
+
+<ContentSection orderId="02" title="Learning Goals">
+    <Card>
+        <div class="container">
+            <div class="container__col">
+                <div class="container__block">
+                    <p>By the end of the week I want to get more comfortable using the GSAP syntax. Learn the best practices to write good tweens and timelines. I want to implement these animations into an Astro website. I choose this framework because it’s lightweight and super intuitive to work with. Below is a list of points (smaller learning goals) that i want to work through this week.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container__divider"></div>
+        <div class="container container--col-2">
+            <div class="container-col">
+                <div class="container__block">
+                    <ul class="container__list">
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Optimize writing tweens & timelines</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Implement the ScrollTrigger plugin</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Use the SplitType library to create advanced text animations </p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Build an animated preloader component</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Page transitions</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Flyout menus</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container__col">
+                <div class="container__block">
+                    <ul class="container__list">
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Custom cursor</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Creating responsive animations</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Preformance first animations</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Hover animations</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>SVG animations</p>
+                        </li>
+                        <li class="container__list-item">
+                            <img src="/icons/circle-arrow-right-red.svg" alt="arrow icon">
+                            <p>Reusable and intuitive Astro components</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </Card>
+</ContentSection>
+
+
+<style lang="scss">
+    .container {
+        display: grid;
+        
+        &--col-2 {
+            gap: var(--space-lg);
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__divider {
+            height: 1px;
+            width: 100%;
+            background-color: var(--gray-500);
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        &__list-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+
+            img {
+                height: 1.5rem;
+                width: fit-content;
+            }
+        }
+    }
+</style>
+

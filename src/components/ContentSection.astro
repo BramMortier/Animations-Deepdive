@@ -1,0 +1,152 @@
+---
+const { title, orderId } = Astro.props
+---
+
+<section class="content-section">
+    <div class="content-section__title">
+        <div class="content-section__order-id">
+            <p>{ orderId }</p>
+        </div>
+        <h3>{ title }</h3>
+        <img src="/icons/arrow-down-right.svg" alt="arrow icon">
+    </div>
+    <div class="content-section__body">
+        <slot />
+    </div>
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { Power2 } from "gsap";
+    import { ScrollTrigger } from "gsap/all";
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const contentSections = document.querySelectorAll(".content-section");
+
+    contentSections.forEach((section) => {
+        const contentSectionTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+          }
+        });
+
+        contentSectionTl.from(section.querySelector(".content-section__order-id"), {
+          scaleX: 0,
+          transformOrigin: "center left",
+          duration: 0.75,
+          ease: Power2.easeOut,
+        })
+        .from(section.querySelector(".content-section__order-id p"), {
+          y: "-100%",
+          duration: 0.5
+        }, "-=0.4")
+        .from(section.querySelector(".content-section__title h3"), {
+          opacity: 0,
+          x: "-20%",
+          ease: Power2.easeOut,
+          duration: 0.75,
+        }, "-=0.5")
+        .from(section.querySelector(".content-section__title img"), {
+          opacity: 0, 
+          duration: 0.5,
+          ease: Power2.easeOut,
+        }, "-=0.25");
+    });
+
+    const contentParagraphs = document.querySelectorAll(".container__block > p");
+
+    contentParagraphs.forEach((paragraph) => {
+        gsap.from(paragraph , {
+            opacity: 0,
+            duration: 0.75,
+            scrollTrigger: {
+                trigger : paragraph,
+                start: "top 80%",
+            },
+        })
+    })
+
+    const contentSubtitles = document.querySelectorAll(".container__block > h4");
+
+    contentSubtitles.forEach((subtitle) => {
+        gsap.from(subtitle , {
+            opacity: 0,
+            duration: 0.75,
+            scrollTrigger: {
+                trigger : subtitle,
+                start: "top 80%",
+            },
+        })
+    })
+
+    const contentListItems = document.querySelectorAll(".container__list-item");
+
+    contentListItems.forEach((listItem) => {
+        const listItemTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: listItem,
+                start: "top 80%",
+            }
+        });
+
+        listItemTl.from(listItem.querySelector("img"), {
+            x: "-100%",
+            opacity: 0,
+            duration: 0.5,
+            ease: Power2.easeOut,
+        })
+        .from(listItem.querySelector("p"), {
+            opacity: 0,
+            duration: 0.5,
+        }, "-=0.25")
+    })
+
+</script>
+
+<style lang="scss">
+    .content-section {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: var(--space-3xl);
+
+        &__title {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xl);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            
+            h3 {
+                font-weight: var(--fw-medium);
+                font-size: var(--fs-lg);
+                line-height: var(--line-height-sm);
+            }
+
+            img {
+                height: 24px;
+                width: fit-content;
+                margin-top: 0.625rem;
+            }
+        }
+
+        &__order-id {
+            background-color: var(--red-500);
+            z-index: 2;
+
+            p {
+                padding: var(--space-3xs) var(--space-xs);
+                color: var(--white);
+                font-weight: var(--fw-regular);
+                font-size: var(--fs-sm);
+                line-height: var(--line-height-xs);
+            }
+        }
+
+        &__body {
+            font-family: var(--merriweather);
+        }
+    }
+</style>

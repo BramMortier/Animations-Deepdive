@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}

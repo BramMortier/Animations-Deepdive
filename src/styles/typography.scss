@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+:root {
+    --poppins: "Poppins";
+    --merriweather: "Merriweather";
+
+    --fs-2xs: 0.875rem;
+    --fs-xs: 1.25rem;
+    --fs-sm: 1.5rem;
+    --fs-md: 2rem;
+    --fs-lg: 3rem;
+    --fs-xl: 4rem;
+    --fs-2xl: 5rem;
+    --fs-3xl: 11rem;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    --line-height-2xs: 0.75;
+    --line-height-xs: 1;
+    --line-height-sm: 1.4;
+    --line-height-md: 1.6;
+    --line-height-lg: 1.8;
+}
+
+body,
+a {
+    font-family: var(--poppins);
+    font-size: var(--fs-xs);
+    font-weight: var(--regular);
+    line-height: var(--line-height-md);
+    color: var(--black);
+    text-decoration: none;
+    font-style: normal;
+}

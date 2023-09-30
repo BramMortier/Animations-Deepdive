@@ -1,0 +1,128 @@
+---
+---
+
+<section class="hero">
+    <div class="hero__animated-topics">
+        <div class="hero__animated-topics-row">
+            <div class="hero__animated-topics-row-cover"></div>
+            <span class="hero__topic">web animations</span>
+            <img class="hero__icon" src="/icons/circle-arrow-right.svg" alt="circle arrow symbol right">
+            <span class="hero__topic hero__topic--yellow">web animations</span>
+            <img class="hero__icon" src="/icons/circle-arrow-right.svg" alt="circle arrow symbol right">
+            <span class="hero__topic">web animations</span>
+            <img class="hero__icon" src="/icons/circle-arrow-right.svg" alt="circle arrow symbol right">
+            <span class="hero__topic hero__topic--yellow">web animations</span>
+        </div>
+        <div class="hero__animated-topics-row">
+            <div class="hero__animated-topics-row-cover"></div>
+            <img class="hero__icon" src="/icons/ghost.svg" alt="ghost icon">
+            <span class="hero__topic">gsap</span>
+            <img class="hero__icon" src="/icons/circle-cross.svg" alt="circle cross icon">
+            <span class="hero__topic hero__topic--yellow">svg</span>
+            <img class="hero__icon" src="/icons/ghost.svg" alt="ghost icon">
+            <span class="hero__topic">gsap</span>
+            <img class="hero__icon " src="/icons/circle-cross.svg" alt="circle cross icon">
+            <span class="hero__topic hero__topic--yellow">svg</span>
+            <img class="hero__icon" src="/icons/ghost.svg" alt="ghost icon">
+        </div>
+        <div class="hero__animated-topics-row">
+            <div class="hero__animated-topics-row-cover"></div>
+            <span class="hero__topic">easing</span>
+            <img class="hero__icon" src="/icons/circle-cross.svg" alt="circle cross icon">
+            <span class="hero__topic hero__topic--yellow">triggers</span>
+            <img class="hero__icon" src="/icons/circle-arrow-right.svg" alt="circle arrow symbol right">
+            <span class="hero__topic">easing</span>
+            <img class="hero__icon" src="/icons/circle-cross.svg" alt="circle cross icon">
+            <span class="hero__topic hero__topic--yellow">triggers</span>
+            <img class="hero__icon" src="/icons/circle-arrow-right.svg" alt="circle arrow symbol right">
+            <span class="hero__topic">easing</span>
+        </div>
+    </div>
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { Power2 } from "gsap";
+
+    const heroEntryTl = gsap.timeline();
+
+    heroEntryTl.from(".hero__animated-topics-row-cover", {
+        delay: 3.5,
+        scaleX: 0,
+        transformOrigin: "left center",
+        duration: 2,
+        ease: Power2.easeOut,
+        stagger: 0.25,
+    })
+    .to(".hero__animated-topics-row > img, span" ,{
+        opacity: 1,
+        duration: 0,
+    })
+    .to(".hero__animated-topics-row-cover", {
+        scaleY: 0,
+        transformOrigin: "center bottom",
+        duration: 0.75,
+        ease: Power2.easeOut,
+        stagger: 0.1,
+    })
+
+    heroEntryTl.play()
+</script>
+
+<style lang="scss">
+    .hero {
+        background-color: var(--red-500);
+        height: calc(80vh -  6rem);
+        display: flex;
+        align-items: center;
+        margin-bottom: var(--space-lg);
+
+        &__animated-topics {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            gap: var(--space-sm);
+            flex-direction: column;
+            padding-bottom: var(--space-xl);
+        }
+        
+        &__animated-topics-row {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+            overflow: hidden;
+
+            & > img, span {
+                opacity: 0;
+            }
+        }
+
+        &__animated-topics-row-cover {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            height: 100%;
+            width: 100vw;
+            background-color: var(--red-700);
+        }
+
+        &__topic {
+            font-size: var(--fs-3xl);
+            white-space: nowrap;
+            text-transform: uppercase;
+            line-height: var(--line-height-2xs);
+            color: var(--white);
+
+            &--yellow {
+                color: var(--yellow-500);
+            }
+        }
+
+        &__icon {
+            height: 132px;
+            width: fit-content;
+        }
+    }
+</style>

@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Preloader from '../components/Preloader.astro';
+import Hero from '../components/Hero.astro';
+import AnimationFrames from '../components/AnimationFrames.astro';
+import Quote from '../components/Quote.astro';
+import ContentSection from '../components/ContentSection.astro';
+
+import LearningReflections from '../components/content/LearningReflections.astro';
+import LearningGoals from '../components/content/LearningGoals.astro';
+import ProjectPlan from '../components/content/ProjectPlan.astro';
+---
+
+<Layout title="DEEPdive.">
+    <Preloader />
+
+    <Hero />
+    <AnimationFrames />
+    <Quote />
+
+    <LearningReflections/>
+    <LearningGoals />
+    <ProjectPlan />
+</Layout>
+

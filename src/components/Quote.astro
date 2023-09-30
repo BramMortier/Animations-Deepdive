@@ -1,0 +1,58 @@
+---
+---
+
+<section class="quote">
+    <div class="quote__line">
+        The <span class="quote__highlighted">depths</span> of our <span class="quote__highlighted">insights</span> are often 
+    </div>
+    <div class="quote__line">
+        determined by the <span class="quote__highlighted">thoroughness</span> of 
+    </div>
+    <div class="quote__line">
+        our <span class="quote__highlighted">explorations.</span>
+    </div>
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/all";
+    import { Back } from "gsap";
+    import SplitType from "split-type";
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const { words } = new SplitType(".quote");
+
+    gsap.from(words, {
+        y: "100%",
+        stagger: 0.1,
+        duration: 0.8,
+        ease: Back.easeOut,
+        scrollTrigger: {
+            trigger: ".quote",
+            start: "top 80%",
+        }
+    })
+</script>
+
+<style lang="scss">
+    .quote {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        font-size: var(--fs-xl);
+        line-height: var(--line-height-sm);
+        font-weight: var(--fw-medium);
+        text-align: center;
+        margin-bottom: var(--space-3xl);
+
+        &__line {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        &__highlighted {
+            color: var(--red-500);
+            text-decoration: underline;
+        }
+    }
+</style>

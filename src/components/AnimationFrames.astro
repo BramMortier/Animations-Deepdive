@@ -1,0 +1,52 @@
+---
+---
+
+<section class="animation-frames">
+    <img src="/images/animation-frames/frame-001.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-002.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-003.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-004.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-005.png" alt="animation frame">
+    
+    <img src="/images/animation-frames/frame-006.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-007.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-008.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-009.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-010.png" alt="animation frame">
+    
+    <img src="/images/animation-frames/frame-011.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-012.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-013.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-014.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-015.png" alt="animation frame">
+
+    <img src="/images/animation-frames/frame-016.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-017.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-018.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-019.png" alt="animation frame">
+    <img src="/images/animation-frames/frame-020.png" alt="animation frame">
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { Power2 } from "gsap";
+
+    gsap.from(".animation-frames > img", {
+        delay: 4,
+        y: "100%",
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: Power2.easeOut,
+    })
+</script>
+
+<style lang="scss">
+    .animation-frames {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: var(--space-sm);
+        padding-inline: var(--space-xl);
+        margin-bottom: var(--space-3xl);
+    }
+</style>
